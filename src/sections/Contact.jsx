@@ -1,13 +1,33 @@
-import React from "react";
-
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    console.log("sendmail called");
+    e.preventDefault();
+    emailjs
+      .sendForm("service_t1ezvai", "template_2l9ycdp", form.current, {
+        publicKey: "qj-TC6HGJtnZCWqjN",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          toast.success("thanks for sending mail");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
   return (
     <section id="section">
-      <div className="px-12 py-8 lg:py-16 mx-auto max-w-screen-md">
-        <h2 className="mb-4 text-4xl font-bold text-center text-gray-200">
+      <div className="px-12 py-8 lg:py-12 mx-auto max-w-screen-md">
+        <h2 className="mb-4 text-4xl font-bold text-center text-white">
           Contact Me
         </h2>
-        <form action="" className="space-y-6">
+        <form ref={form} onSubmit={sendEmail} className="space-y-4">
           <div>
             <label
               htmlFor="name"
@@ -18,9 +38,10 @@ const Contact = () => {
             <input
               type="text"
               id="name"
+              name="from_name"
               placeholder="Your name"
               required
-              className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-500 block w-full p-2.5"
+              className="shadow-sm bg-[rgb(40,40,40)] text-sm rounded-sm focus:ring-primary-500 block w-full p-2 focus:outline-none"
             />
           </div>
           <div>
@@ -33,9 +54,10 @@ const Contact = () => {
             <input
               type="email"
               id="email"
+              name="from_email"
               placeholder="Your email"
               required
-              className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-500 block w-full p-2.5"
+              className="shadow-sm bg-[rgb(40,40,40)] text-sm rounded-sm block w-full p-2 focus:outline-none"
             />
           </div>
           <div className="sm:col-span-2">
@@ -46,15 +68,17 @@ const Contact = () => {
               Message
             </label>
             <textarea
-              row="10"
+              row="6"
               name="message"
               id="message"
-              className=" h-30 resize-none shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-500 block w-full p-2.5"
+              className="h-25 resize-none shadow-sm bg-[rgb(40,40,40)] text-white text-sm rounded-sm focus:ring-primary-500 block w-full p-2.5 focus:outline-none"
               defaultValue="Send Message"
             ></textarea>
-            <button className="inline-flex text-white bg-blue-600 border-0 py-2 px-6 focus:outline-none hover:cursor-pointer hover:bg-blue-700 hover:shadow-[0_0_40px_rgba(47,65,240,0.72)] rounded-sm text-lg mt-6">
-              Send Message
-            </button>
+            <input
+              type="submit"
+              value="Send Message"
+              className="inline-flex text-white bg-blue-600 border-0 py-2 px-6 focus:outline-none hover:cursor-pointer hover:bg-blue-700 hover:shadow-[0_0_40px_rgba(47,65,240,0.72)] rounded-sm text-lg mt-6"
+            />
           </div>
         </form>
       </div>
