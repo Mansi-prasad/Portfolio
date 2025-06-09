@@ -22,7 +22,7 @@ const Contact = () => {
       );
   };
   return (
-    <section id="section">
+    <section id="contact">
       <div className="px-12 py-8 lg:py-12 mx-auto max-w-screen-md">
         <h2 className="mb-4 text-4xl font-bold text-center text-white">
           Contact Me

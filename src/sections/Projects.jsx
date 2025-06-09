@@ -42,7 +42,13 @@ const Projects = () => {
     arrows: true,
     responsive: [
       {
-        breakpoint: 780,
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640,
         settings: {
           slidesToShow: 1,
         },
@@ -60,11 +66,14 @@ const Projects = () => {
         <h2 className="text-4xl font-bold text-center mb-6 md:mb-12">
           My Projects
         </h2>
-        <div className="mx-10 sm:mx-2">
+        <div className="w-full px-4 sm:px-2 max-w-screen-xl mx-auto">
           <Slider {...settings}>
             {listProjects.map((project) => {
               return (
-                <div key={project.id} className="p-4">
+                <div
+                  key={project.id}
+                  className="p-4 mx-auto duration-200 transform hover:scale-105"
+                >
                   <div className="h-full border-2 border-blue-400 shadow-[0_0_15px_rgba(47,65,240,0.72)] border-opacity-60 rounded-lg overflow-hidden">
                     <img
                       src={project.image}
