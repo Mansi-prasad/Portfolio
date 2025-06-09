@@ -27,11 +27,14 @@ const Skills = () => {
   );
 
   return (
-    <section className="relative min-h-50vh flex flex-col items-center my-12 px-4 py-4 overflow-hidden text-white" id="skills">
+    <section
+      className="relative min-h-50vh flex flex-col items-center my-12 px-4 py-4 overflow-hidden text-white"
+      id="skills"
+    >
       <div className="text-center mb-4">
         <h1 className="text-4xl font-bold">
-          My Experience <br />
-          <span className="text-purple-400">Skills</span>
+          My
+          <span className="text-blue-400"> Skills</span>
         </h1>
         <p className="text-gray-400 mt-4 max-w-xl mx-auto">
           Technologies and tools I use.
