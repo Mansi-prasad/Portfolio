@@ -28,7 +28,7 @@ const Skills = () => {
 
   return (
     <section
-      className="relative min-h-50vh flex flex-col items-center my-12 px-4 py-4 overflow-hidden text-white"
+      className="relative min-h-50vh flex flex-col items-center px-4 py-4 overflow-hidden text-white"
       id="skills"
     >
       <div className="text-center mb-4">

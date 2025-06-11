@@ -3,87 +3,9 @@ import { FaGithub } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaArrowDownLong } from "react-icons/fa6";
-import { RxCross2 } from "react-icons/rx";
 import assets from "../assets/assets";
 import { useState } from "react";
-const AboutPopUp = ({ onClose }) => {
-  const skills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "ReactJS",
-    "NodeJS",
-    "Java",
-    "SQL",
-    "MongoDB",
-    "Git/Github",
-  ];
-  // const mernIcons=[{assets.mongodb}]
-  return (
-    <div className="fixed inset-0 bg-gray-900 bg-opacity-40 flex justify-center z-50 m-20">
-      <div className="p-2 rounded shadow-lg w-full relative">
-        <div className="flex justify-end">
-          <button
-            onClick={onClose}
-            className="mt-2 text-3xl px-4 py-2 text-white hover:cursor-pointer"
-          >
-            <RxCross2 />
-          </button>
-        </div>
-        <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-20 px-6 md:px-12 lg:px-20 py-2 md:py-4">
-          {/* left side */}
-          <div className="flex-1 p-4 md:p-6">
-            <h2 className="uppercase text-blue-500 text-2xl md:text-3xl py-4">
-              about me
-            </h2>
-            <p className="text-base md:text-lg">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit
-              aliquam sed illo officiis! Natus dolores itaque dolorum tempore
-              aperiam quibusdam aut laudantium quae? Rem, excepturi? Quibusdam
-              unde eius harum. Sapiente.
-            </p>
-            <div className="my-6 flex flex-wrap gap-3">
-              {skills.map((skill, index) => (
-                <span
-                  key={index}
-                  className="border border-white px-4 py-2 rounded-full text-sm md:text-base"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-            <div className="flex gap-4 items-end">
-              <div className="flex flex-col items-center">
-                <img src={assets.mongoDBLogo} alt="mongodb" className="w-12" />
-                <p className="text-green-600 font-bold">M</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src={assets.express} alt="express" className="w-12" />
-                <p className="font-bold">E</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src={assets.reactLogo} alt="reactJS" className="w-12" />
-                <p className="text-blue-600 font-bold">R</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src={assets.nodeIcon} alt="nodeJS" className="w-10" />
-                <p className="text-green-400 font-bold">N</p>
-              </div>
-            </div>
-          </div>
-          {/* Right side (Image) */}
-          <div className="flex-1 p-4 md:p-6">
-            <img
-              src={assets.nodeJS}
-              alt="About Illustration"
-              className="w-full h-auto rounded"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+import AboutPopUp from "../components/AboutPopUp";
 const Hero = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const openPopUp = () => setIsAboutOpen(true);

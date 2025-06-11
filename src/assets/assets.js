@@ -10,11 +10,13 @@ import nodeJS from "./nodeJS.png";
 import express from "./express.png";
 import express2 from "./express2.png";
 import nodeIcon from "./nodeIcon.png";
+import webTech from "./webTech.png";
 // projects
 import bookStore from "./bookStore.png";
 import foodOrderingSystem from "./foodOrderingSystem.png";
 import chatApp from "./chatApp.png";
 import blogWrite from "./blogWrite.png";
+
 const assets = {
   express,
   express2,
@@ -31,5 +33,6 @@ const assets = {
   foodOrderingSystem,
   bookStore,
   blogWrite,
+  webTech,
 };
 export default assets;
